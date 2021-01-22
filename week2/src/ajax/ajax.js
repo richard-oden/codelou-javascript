@@ -32,10 +32,30 @@ class AjaxSuite {
      */
     wordSearch(name) {
         // Implement your solution below this line
+
+        const xhr = new XMLHttpRequest();
+        return new Promise((resolve) => {
+            xhr.onreadystatechange = (e) => {
+              if (xhr.readyState !== 4) return;
+              if (xhr.status === 200) resolve(xhr.responseText);
+            };
         
+            xhr.open('GET', 'https://pokeapi.co/api/v2/pokemon/' + name);
+            xhr.send();
+        });
+
+        // Alternative solution using fetch API and async/await:
+        // async function getResponse(url) {
+        //     try {
+        //       return await fetch(url);
+        //     } catch (error) {
+        //       throw error;
+        //     }
+        // }
+        // getResponse('https://pokeapi.co/api/v2/pokemon/' + name);
+
         // Implement your solution above this line
     }
-
 }
 
 module.exports = AjaxSuite;
