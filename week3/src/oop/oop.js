@@ -14,6 +14,19 @@
  * Challenge 1.3: Create a method on the Animal class which prints the value of name.
  */
 
+ class Animal {
+     constructor(name, legCount, breed, color) {
+         this.name = name;
+         this.legCount = legCount;
+         this.breed = breed;
+         this.color = color;
+     }
+
+     printName() {
+         console.log(this.name);
+     }
+ }
+
 /**
  * Challenge 2.1: Create a new class named 'Dog' which extends the Animal class
  * 
@@ -27,6 +40,17 @@
  * 'White Husky'
  */
 
+ class Dog extends Animal {
+     constructor(name, legCount, breed, color, noseLength) {
+         super(name, legCount, breed, color);
+         this.noseLength = noseLength;
+     }
+
+     printColorAndBreed() {
+         console.log(`${color} ${breed}`);
+     }
+ }
+
 /**
  * Challenge 3.1: Create a new class named 'Cat' which extends the Animal class
  * 
@@ -35,6 +59,13 @@
  * color
  * furLenth
  */
+
+ class Cat extends Animal {
+     constructor(name, legCount, breed, color, furLength) {
+         super(name, legCount, breed, color);
+         this.furLength = furLength;
+     }
+ }
 
 /**
  * Challenge 4.1: Refactor the classes Animal, Dog and Cat to move the duplicated
@@ -62,7 +93,9 @@ class OOPSuite {
      * @param {String} color 
      * @param {Number} noseLength
      */
-    createDog(name, legCount, breed, color, noseLength) {}
+    createDog(name, legCount, breed, color, noseLength) {
+        return new Dog(name, legCount, breed, color, noseLength);
+    }
 
     /**
      * Challenge 5: Update the following method to instantiate and return a new instance
@@ -74,7 +107,9 @@ class OOPSuite {
      * @param {String} color 
      * @param {Number} furLength
      */
-    createCat(name, legCount, breed, color, furLength) {}
+    createCat(name, legCount, breed, color, furLength) {
+        return new Cat(name, legCount, breed, color, furLength);
+    }
 
 }
 
