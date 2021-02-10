@@ -14,7 +14,15 @@ class ConditionalSuite {
      * @param {Number} n - Number to be checked if odd/even
      * @returns {Boolean}
      */
-    isEven(n) {}
+    isEven(n) {
+        if (n % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+        // Bonus solution:
+        // return !Boolean(n % 2);
+    }
 
     /**
      * if..else logic can be extended to include additional statements by chaining
@@ -26,9 +34,17 @@ class ConditionalSuite {
      * 
      * @param {String} gender - 'Male' or 'Female'
      * @param {Number} age - Age of the sheep
-     * @returns {String} - 'Lamb', 'Ewe', 'Raw'
+     * @returns {String} - 'Lamb', 'Ewe', 'Ram'
      */
-    sheepClassification(gender, age) {}
+    sheepClassification(gender, age) {
+        if (age < 1) {
+            return 'Lamb';
+        } else if (age >= 1 && gender == 'Male') {
+            return 'Ram';
+        } else {
+            return 'Ewe';
+        }
+    }
 
     /**
      * if..else logic can often times be shortened for readability by using ternaries.
@@ -39,7 +55,9 @@ class ConditionalSuite {
      * @param {Number} n - Number to be checked if odd/even
      * @returns {Boolean}
      */
-    isEvenTernary(n) {}
+    isEvenTernary(n) {
+        return n % 2 == 0 ? true : false;
+    }
 
     /**
      * Challenge 4. When buying and selling grain in bulk, prices are often based on the amount
@@ -59,7 +77,15 @@ class ConditionalSuite {
      * @param {Number} n - Number of units being purchased
      * @returns {Number} - Price
      */
-    getPurchasePrice(n) {}
+    getPurchasePrice(n) {
+        if (n < 2000) {
+            return 100;
+        } else if (n > 4000) {
+            return 90;
+        } else {
+            return 95;
+        }
+    }
 
     /**
      * In addition so simple if..else / ternary logic. We can perform logic based off a flag using
@@ -85,7 +111,27 @@ class ConditionalSuite {
      * @param {Number} n - Numerical day of the week
      * @returns {String} - Name of the day
      */
-    whatDayIsToday(n) {}
+    whatDayIsToday(n) {
+        switch (n) {
+            case 0:
+                return 'Sunday';
+            case 1:
+                return 'Monday';
+            case 2:
+                return 'Tuesday';
+            case 3:
+                return 'Wednesday';
+            case 4:
+                return 'Thursday';
+            case 5:
+                return 'Friday';
+            case 6:
+                return 'Saturday';
+        }
+
+        // Bonus solution
+        // return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][n];
+    }
 }
 
 module.exports = ConditionalSuite;
